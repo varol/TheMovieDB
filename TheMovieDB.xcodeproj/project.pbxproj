@@ -44,6 +44,13 @@
 		E475381228423F5D00A8EA00 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381128423F5D00A8EA00 /* UICollectionView+Extensions.swift */; };
 		E475381428425D4300A8EA00 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381328425D4300A8EA00 /* String+Extensions.swift */; };
 		E4753816284290E900A8EA00 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4753815284290E900A8EA00 /* UIView+Extensions.swift */; };
+		E4753819284292E200A8EA00 /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4753818284292E200A8EA00 /* MockHomeViewController.swift */; };
+		E475381B284292F200A8EA00 /* MockHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381A284292F200A8EA00 /* MockHomeInteractor.swift */; };
+		E475381D284292FA00A8EA00 /* MockHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381C284292FA00A8EA00 /* MockHomeRouter.swift */; };
+		E475381F2842931C00A8EA00 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381E2842931C00A8EA00 /* HomePresenterTests.swift */; };
+		E4753821284293EC00A8EA00 /* TopRatedTVShows.json in Resources */ = {isa = PBXBuildFile; fileRef = E4753820284293EC00A8EA00 /* TopRatedTVShows.json */; };
+		E47538272842A1D200A8EA00 /* MockTVShowListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47538262842A1D200A8EA00 /* MockTVShowListCell.swift */; };
+		E47538292842A2B100A8EA00 /* TVShowListCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47538282842A2B100A8EA00 /* TVShowListCellPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +111,13 @@
 		E475381128423F5D00A8EA00 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		E475381328425D4300A8EA00 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E4753815284290E900A8EA00 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E4753818284292E200A8EA00 /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		E475381A284292F200A8EA00 /* MockHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeInteractor.swift; sourceTree = "<group>"; };
+		E475381C284292FA00A8EA00 /* MockHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeRouter.swift; sourceTree = "<group>"; };
+		E475381E2842931C00A8EA00 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		E4753820284293EC00A8EA00 /* TopRatedTVShows.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TopRatedTVShows.json; sourceTree = "<group>"; };
+		E47538262842A1D200A8EA00 /* MockTVShowListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTVShowListCell.swift; sourceTree = "<group>"; };
+		E47538282842A2B100A8EA00 /* TVShowListCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListCellPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +186,8 @@
 		E4753790284201CB00A8EA00 /* TheMovieDBTests */ = {
 			isa = PBXGroup;
 			children = (
+				E47538242842A1A000A8EA00 /* Cells */,
+				E47538232842A19800A8EA00 /* Screens */,
 				E4753791284201CB00A8EA00 /* TheMovieDBTests.swift */,
 			);
 			path = TheMovieDBTests;
@@ -332,11 +348,56 @@
 		E4753805284238FF00A8EA00 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E47538222842A16F00A8EA00 /* TVShowListCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E4753817284292C200A8EA00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E475381E2842931C00A8EA00 /* HomePresenterTests.swift */,
+				E4753818284292E200A8EA00 /* MockHomeViewController.swift */,
+				E475381A284292F200A8EA00 /* MockHomeInteractor.swift */,
+				E475381C284292FA00A8EA00 /* MockHomeRouter.swift */,
+				E4753820284293EC00A8EA00 /* TopRatedTVShows.json */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E47538222842A16F00A8EA00 /* TVShowListCell */ = {
+			isa = PBXGroup;
+			children = (
 				E47538062842392900A8EA00 /* TVShowListCell.swift */,
 				E47538072842392900A8EA00 /* TVShowListCell.xib */,
 				E475380F28423C6800A8EA00 /* TVShowListCellPresenter.swift */,
 			);
+			path = TVShowListCell;
+			sourceTree = "<group>";
+		};
+		E47538232842A19800A8EA00 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E4753817284292C200A8EA00 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E47538242842A1A000A8EA00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E47538252842A1A500A8EA00 /* TVShowListCell */,
+			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E47538252842A1A500A8EA00 /* TVShowListCell */ = {
+			isa = PBXGroup;
+			children = (
+				E47538262842A1D200A8EA00 /* MockTVShowListCell.swift */,
+				E47538282842A2B100A8EA00 /* TVShowListCellPresenterTests.swift */,
+			);
+			path = TVShowListCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4753821284293EC00A8EA00 /* TopRatedTVShows.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +576,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4753792284201CB00A8EA00 /* TheMovieDBTests.swift in Sources */,
+				E4753819284292E200A8EA00 /* MockHomeViewController.swift in Sources */,
+				E47538272842A1D200A8EA00 /* MockTVShowListCell.swift in Sources */,
+				E475381B284292F200A8EA00 /* MockHomeInteractor.swift in Sources */,
+				E475381F2842931C00A8EA00 /* HomePresenterTests.swift in Sources */,
+				E475381D284292FA00A8EA00 /* MockHomeRouter.swift in Sources */,
+				E47538292842A2B100A8EA00 /* TVShowListCellPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
