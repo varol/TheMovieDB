@@ -9,30 +9,29 @@ import Foundation
 import DistilledCoreAPI
 
 protocol HomeInteractorInterface: AnyObject {
-    func fetchMovies(page: String)
+    func fetchTVShows(page: Int)
 }
 
 protocol HomeInteractorOutputInterface: AnyObject {
-    func handleTopRatedMoviesResult(_ result: TopRatedMoviesResult)
+    func handleTopRatedTVShowsResult(_ result: TopRatedTVShowsResult)
 }
 
-typealias TopRatedMoviesResult = Result<TopRatedMoviesResponse, APIClientError>
+typealias TopRatedTVShowsResult = Result<TopRatedTVShowsResponse, APIClientError>
 
 final class HomeInteractor: HomeInteractorInterface {
     var output: HomeInteractorOutputInterface?
-    private let networkManager: NetworkManager<MoviesEndpoint>
+    private let networkManager: NetworkManager<MovieDBEndpoint>
 
-    init(networkManager: NetworkManager<MoviesEndpoint> = NetworkManager()) {
+    init(networkManager: NetworkManager<MovieDBEndpoint> = NetworkManager()) {
         self.networkManager = networkManager
     }
 
-    func fetchMovies(page: String) {
-        networkManager.request(endpoint: .topRatedMovies(page),
-                               type: TopRatedMoviesResponse.self) { [weak self] result in
+    func fetchTVShows(page: Int) {
+        networkManager.request(endpoint: .topRatedTVShows(page),
+                               type: TopRatedTVShowsResponse.self) { [weak self] result in
             guard let self = self else { return }
-            self.output?.handleTopRatedMoviesResult(result)
+            self.output?.handleTopRatedTVShowsResult(result)
         }
     }
-
 }
 
