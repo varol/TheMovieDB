@@ -26,7 +26,6 @@ class HomePresenterTests: XCTestCase {
                           view: view)
     }
 
-
     func test_viewDidLoad_InvokesRequiredViewMethods() {
         XCTAssertFalse(view.invokedPrepareCollectionView)
         XCTAssertEqual(view.invokedPrepareCollectionViewCount, .zero)

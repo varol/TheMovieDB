@@ -12,7 +12,7 @@ protocol HomeRouterInterface: AnyObject {
 }
 
 enum HomeRoutes {
-
+    case detail
 }
 
 final class HomeRouter: NSObject {

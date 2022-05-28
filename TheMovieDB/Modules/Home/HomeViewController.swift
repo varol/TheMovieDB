@@ -62,6 +62,7 @@ extension HomeViewController: HomeViewControllerInterface {
                                          style: .plain,
                                          target: self,
                                          action: #selector(sortButtonTapped))
+        sortButton.accessibilityIdentifier = (AppAccessibilityIdenfier.sortButton.rawValue)
         navigationItem.rightBarButtonItems = [sortButton]
     }
 
@@ -127,6 +128,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
         if let showItem = presenter.getTVShow(indexPath.row) {
             cell.presenter = TVShowListCellPresenter(view: cell, showItem: showItem)
+            cell.accessibilityIdentifier = (AppAccessibilityIdenfier.tvShowListCell.rawValue + String(indexPath.row))
         }
 
         return cell
