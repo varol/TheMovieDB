@@ -29,6 +29,11 @@
 		E47537DD284203ED00A8EA00 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D2284203ED00A8EA00 /* BaseViewController.swift */; };
 		E47537DE284203ED00A8EA00 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D3284203ED00A8EA00 /* BaseLabel.swift */; };
 		E47537DF284203ED00A8EA00 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D4284203ED00A8EA00 /* BaseImageView.swift */; };
+		E47537F328420F6200A8EA00 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537EE28420F6200A8EA00 /* HomeInteractor.swift */; };
+		E47537F428420F6200A8EA00 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E47537EF28420F6200A8EA00 /* HomeViewController.xib */; };
+		E47537F528420F6200A8EA00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537F028420F6200A8EA00 /* HomeViewController.swift */; };
+		E47537F628420F6200A8EA00 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537F128420F6200A8EA00 /* HomeRouter.swift */; };
+		E47537F728420F6200A8EA00 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537F228420F6200A8EA00 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		E47537D2284203ED00A8EA00 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E47537D3284203ED00A8EA00 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		E47537D4284203ED00A8EA00 /* BaseImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
+		E47537EE28420F6200A8EA00 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		E47537EF28420F6200A8EA00 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E47537F028420F6200A8EA00 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E47537F128420F6200A8EA00 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		E47537F228420F6200A8EA00 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E47537B22842039000A8EA00 /* Splash */,
+				E47537ED28420F6200A8EA00 /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -244,6 +255,18 @@
 				E47537D4284203ED00A8EA00 /* BaseImageView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E47537ED28420F6200A8EA00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E47537EE28420F6200A8EA00 /* HomeInteractor.swift */,
+				E47537EF28420F6200A8EA00 /* HomeViewController.xib */,
+				E47537F028420F6200A8EA00 /* HomeViewController.swift */,
+				E47537F128420F6200A8EA00 /* HomeRouter.swift */,
+				E47537F228420F6200A8EA00 /* HomePresenter.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +376,7 @@
 				E4753787284201CB00A8EA00 /* LaunchScreen.storyboard in Resources */,
 				E4753784284201CB00A8EA00 /* Assets.xcassets in Resources */,
 				E47537C12842039000A8EA00 /* SplashViewController.xib in Resources */,
+				E47537F428420F6200A8EA00 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +404,11 @@
 				E475377B284201C900A8EA00 /* AppDelegate.swift in Sources */,
 				E47537DB284203ED00A8EA00 /* Viewable.swift in Sources */,
 				E47537D7284203ED00A8EA00 /* UIViewController+Extensions.swift in Sources */,
+				E47537F728420F6200A8EA00 /* HomePresenter.swift in Sources */,
 				E47537DD284203ED00A8EA00 /* BaseViewController.swift in Sources */,
+				E47537F628420F6200A8EA00 /* HomeRouter.swift in Sources */,
 				E475377D284201C900A8EA00 /* SceneDelegate.swift in Sources */,
+				E47537F528420F6200A8EA00 /* HomeViewController.swift in Sources */,
 				E47537D5284203ED00A8EA00 /* LoadingView.swift in Sources */,
 				E47537BE2842039000A8EA00 /* SplashPresenter.swift in Sources */,
 				E47537DE284203ED00A8EA00 /* BaseLabel.swift in Sources */,
@@ -393,6 +420,7 @@
 				E47537BF2842039000A8EA00 /* SplashRouter.swift in Sources */,
 				E47537DA284203ED00A8EA00 /* Collection+Extensions.swift in Sources */,
 				E47537D9284203ED00A8EA00 /* UINavigationController+Extensions.swift in Sources */,
+				E47537F328420F6200A8EA00 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

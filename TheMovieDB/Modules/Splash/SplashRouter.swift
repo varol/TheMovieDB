@@ -12,7 +12,7 @@ protocol SplashRouterInterface: AnyObject {
 }
 
 enum SplashRoutes {
-
+    case home
 }
 
 final class SplashRouter: NSObject {
@@ -36,7 +36,12 @@ final class SplashRouter: NSObject {
 
 extension SplashRouter: SplashRouterInterface {
     func navigate(_ route: SplashRoutes) {
-
+        switch route {
+        case .home:
+            guard let navigationController = navigationController else { return }
+            let homeVC = HomeRouter.setupModule(navigationController: navigationController)
+            navigationController.setRootViewController(homeVC, animated: false)
+        }
     }
 }
 

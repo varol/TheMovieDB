@@ -7,6 +7,12 @@
 
 import Foundation
 
+extension SplashPresenter {
+    fileprivate enum Constants {
+        static let delayTime: DispatchTime = DispatchTime(uptimeNanoseconds: 3)
+    }
+}
+
 protocol SplashPresenterInterface: AnyObject {
     func viewDidLoad()
 }
@@ -27,7 +33,9 @@ final class SplashPresenter: SplashPresenterInterface {
     }
 
     func viewDidLoad() {
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.router.navigate(.home)
+        }
     }
 }
 

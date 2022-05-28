@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let navController = UINavigationController()
-        let viewController = SplashRouter.setupModule(navigationController: navController)
-        navController.viewControllers = [viewController]
-        window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
         return true

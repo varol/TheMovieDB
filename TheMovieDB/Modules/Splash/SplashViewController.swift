@@ -16,6 +16,7 @@ final class SplashViewController: BaseViewController {
 
     override func viewDidLoad() {
         presenter.viewDidLoad()
+        debugPrint("splash")
     }
 }
 
