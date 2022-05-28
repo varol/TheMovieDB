@@ -1,5 +1,5 @@
 //
-//  MoviesEndpoint.swift
+//  MovieDBEndpoint.swift
 //  TheMovieDB
 //
 //  Created by Varol Aksoy on 28.05.2022.
@@ -8,21 +8,21 @@
 import Foundation
 import DistilledCoreAPI
 
-enum MoviesEndpoint: Endpoint {
-    case topRatedMovies(_ page: String)
+enum MovieDBEndpoint: Endpoint {
+    case topRatedTVShows(_ page: Int)
 
     var baseUrl: String { "https://api.themoviedb.org/" }
 
     var path: String {
         switch self {
-        case .topRatedMovies:
+        case .topRatedTVShows:
             return "3/tv/top_rated"
         }
     }
 
     var parameters: [String : Any] {
         switch self {
-        case .topRatedMovies(let page):
+        case .topRatedTVShows(let page):
             return [
                     "api_key" : "25a8f80ba018b52efb64f05140f6b43c",
                     "language" : "en-US",
@@ -33,7 +33,7 @@ enum MoviesEndpoint: Endpoint {
 
     var method: HTTPMethod {
         switch self {
-        case .topRatedMovies:
+        case .topRatedTVShows:
             return .get
         }
     }

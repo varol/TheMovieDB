@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TVShowListCell" customModule="TheMovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-ui-orD">
+                        <rect key="frame" x="0.0" y="0.0" width="495" height="161"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F3P-Wb-0sY">
+                                <rect key="frame" x="8" y="8" width="471" height="145"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-91-5c1" customClass="BaseImageView" customModule="TheMovieDB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="145"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="WEE-rj-8OX"/>
+                                            <constraint firstAttribute="height" priority="750" constant="145" id="Xiv-TW-KN4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="35w-nV-6Wo">
+                                        <rect key="frame" x="128" y="0.0" width="343" height="145"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqv-1B-Qu8" customClass="BaseLabel" customModule="TheMovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd0-EL-u1s" customClass="BaseLabel" customModule="TheMovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28.5" width="343" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwI-rD-zTc">
+                                                <rect key="frame" x="0.0" y="51" width="343" height="94"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="F3P-Wb-0sY" secondAttribute="bottom" constant="8" id="6oj-fL-Qwy"/>
+                            <constraint firstItem="F3P-Wb-0sY" firstAttribute="leading" secondItem="Bl4-ui-orD" secondAttribute="leading" constant="8" id="NoF-QP-OOU"/>
+                            <constraint firstAttribute="trailing" secondItem="F3P-Wb-0sY" secondAttribute="trailing" constant="16" id="Rr5-u5-h1C"/>
+                            <constraint firstItem="F3P-Wb-0sY" firstAttribute="top" secondItem="Bl4-ui-orD" secondAttribute="top" constant="8" id="l1F-8V-EYJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Bl4-ui-orD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8xT-5X-5He"/>
+                <constraint firstItem="Bl4-ui-orD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9CV-8F-REo"/>
+                <constraint firstAttribute="bottom" secondItem="Bl4-ui-orD" secondAttribute="bottom" id="bjq-cq-Evh"/>
+                <constraint firstAttribute="trailing" secondItem="Bl4-ui-orD" secondAttribute="trailing" id="uV9-ht-dKf"/>
+            </constraints>
+            <size key="customSize" width="495" height="161"/>
+            <connections>
+                <outlet property="posterImageView" destination="WTx-91-5c1" id="wda-vY-qJg"/>
+                <outlet property="showDescriptionLabel" destination="Bd0-EL-u1s" id="bst-jT-fn2"/>
+                <outlet property="showTitleLabel" destination="Bqv-1B-Qu8" id="bA8-Tb-nBI"/>
+            </connections>
+            <point key="canvasLocation" x="460.14492753623193" y="98.772321428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

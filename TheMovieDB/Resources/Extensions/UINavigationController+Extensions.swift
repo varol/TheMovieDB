@@ -43,4 +43,16 @@ internal extension UINavigationController {
             popToViewController(viewController, animated: animated)
         }
     }
+
+    func setTintColor(_ color: UIColor) {
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
+        navigationBar.tintColor = color
+    }
+
+    func backgroundColor(_ color: UIColor) {
+        navigationBar.setBackgroundImage(nil, for: .default)
+        navigationBar.barTintColor = color
+        navigationBar.shadowImage = UIImage()
+    }
+
 }

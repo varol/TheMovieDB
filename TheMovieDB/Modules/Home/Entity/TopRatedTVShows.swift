@@ -1,5 +1,5 @@
 //
-//  TopRatedMovies.swift
+//  TopRatedTVShowsResponse.swift
 //  TheMovieDB
 //
 //  Created by Varol Aksoy on 28.05.2022.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-// MARK: - TopRatedMoviesResponse
-struct TopRatedMoviesResponse: Codable {
+// MARK: - TopRatedTVShowsResponse
+struct TopRatedTVShowsResponse: Codable {
     let page: Int?
-    let results: [Movie]?
+    let results: [TVShow]?
     let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -20,8 +20,8 @@ struct TopRatedMoviesResponse: Codable {
     }
 }
 
-// MARK: - Movie
-struct Movie: Codable {
+// MARK: - TVShow
+struct TVShow: Codable {
     let backdropPath: String?
     let firstAirDate: String?
     let genreIDS: [Int]?
