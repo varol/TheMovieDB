@@ -29,6 +29,7 @@ final class HomeRouter: NSObject {
         let router = HomeRouter(navigationController: navigationController)
         let presenter = HomePresenter(interactor: interactor, router: router, view: view)
         view.presenter = presenter
+        interactor.output = presenter
         return view
     }
 }

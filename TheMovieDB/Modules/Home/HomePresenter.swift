@@ -7,8 +7,11 @@
 
 import Foundation
 
+import Foundation
+
 protocol HomePresenterInterface: AnyObject {
     func viewDidLoad()
+    func viewWillAppear()
 }
 
 final class HomePresenter: HomePresenterInterface {
@@ -27,10 +30,21 @@ final class HomePresenter: HomePresenterInterface {
     }
 
     func viewDidLoad() {
+        interactor.fetchMovies(page: "1")
+    }
+
+    func viewWillAppear() {
 
     }
 }
 
 extension HomePresenter: HomeInteractorOutputInterface {
-
+    func handleTopRatedMoviesResult(_ result: TopRatedMoviesResult) {
+        switch result {
+        case .success(let response):
+            debugPrint(response)
+        case .failure(let error):
+            debugPrint(error.message)
+        }
+    }
 }

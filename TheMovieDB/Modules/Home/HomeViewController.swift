@@ -15,8 +15,8 @@ final class HomeViewController: BaseViewController {
     var presenter: HomePresenterInterface!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         presenter.viewDidLoad()
-        debugPrint("home")
     }
 }
 
