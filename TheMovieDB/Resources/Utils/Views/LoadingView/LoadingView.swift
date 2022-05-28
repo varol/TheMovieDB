@@ -10,38 +10,39 @@ import UIKit
 class LoadingView {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     static let shared = LoadingView()
-    var blurView: UIVisualEffectView = UIVisualEffectView()
+    var containerView: UIView = UIView()
 
     private init() {
         configure()
     }
 
     func configure() {
-        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        blurView.translatesAutoresizingMaskIntoConstraints = false
-        blurView.frame = UIWindow(frame: UIScreen.main.bounds).frame
-        activityIndicator.center = blurView.center
+        containerView.backgroundColor = .clear
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.frame = UIWindow(frame: UIScreen.main.bounds).frame
+        activityIndicator.center = containerView.center
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .darkGray
         if #available(iOS 13.0, *) {
             activityIndicator.style = .large
         } else {
             activityIndicator.style = .gray
         }
         activityIndicator.hidesWhenStopped = true
-        blurView.contentView.addSubview(activityIndicator)
+        containerView.addSubview(activityIndicator)
     }
 
     func startLoading() {
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
         let window = windowScene?.windows.first
-        window?.addSubview(blurView)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
+        window?.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.startAnimating()
     }
 
     func hideLoading() {
-        blurView.removeFromSuperview()
+        containerView.removeFromSuperview()
         activityIndicator.stopAnimating()
     }
 }

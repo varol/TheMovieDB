@@ -31,14 +31,20 @@ final class TVShowListCell: BaseCollectionViewCell {
 }
 
 extension TVShowListCell: TVShowListCellInterface {
-    func setTVShowImageView(_ imageUrl: String, placeholderImage: String) {
+    func setTVShowImageView(_ imageUrl: String,
+                            placeholderImage: String) {
 
         let url = URL(string: imageUrl)
         let placeholder = UIImage(named: placeholderImage)
         posterImageView.kf.indicatorType = .activity
-        posterImageView.kf.setImage(with: url,
-                                  placeholder: placeholder,
-                                  options: [.transition(.fade(0.3))])
+
+        posterImageView.kf.setImage(with: url) { result in
+           switch result {
+           case .failure(_):
+                self.posterImageView.image = placeholder
+           case .success(_):break
+           }
+         }
     }
 
     func setTVShowTitle(_ text: String) {

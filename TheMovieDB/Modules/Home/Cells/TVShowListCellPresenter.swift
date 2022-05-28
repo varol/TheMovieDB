@@ -34,7 +34,8 @@ final class TVShowListCellPresenter {
 extension TVShowListCellPresenter : TVShowListCellPresenterInterface {
     func load() {
         if let posterPath = showItem?.posterPath {
-            view?.setTVShowImageView(Constants.defaultPosterImagePath + posterPath, placeholderImage: Constants.placeholderImage)
+            view?.setTVShowImageView(Constants.defaultPosterImagePath + posterPath,
+                                     placeholderImage: Constants.placeholderImage)
         }
 
         if let title = showItem?.name {

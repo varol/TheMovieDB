@@ -14,19 +14,4 @@ internal extension UIViewController {
             navigationController.viewControllers.contains(self))
     }
 
-    var isPresentedViewController: Bool {
-        if self.presentingViewController?.presentedViewController == self {
-            return true
-        }
-        if self.navigationController != nil &&
-            self.navigationController?.presentingViewController?.presentedViewController == self.navigationController &&
-            self.navigationController?.viewControllers.first == self {
-            return true
-        }
-        if self.tabBarController?.presentingViewController is UITabBarController {
-            return true
-        }
-        return false
-    }
-
 }

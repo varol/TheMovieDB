@@ -105,7 +105,8 @@ extension HomePresenter: HomeInteractorOutputInterface {
             view?.reloadData()
             view?.hideLoadingView()
         case .failure(let error):
-            debugPrint(error.message)
+            view.showAlert(title: error.title,
+                           message: error.message)
             debugPrint(error.debugMessage)
         }
     }

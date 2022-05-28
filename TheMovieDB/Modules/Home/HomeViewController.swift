@@ -15,6 +15,7 @@ protocol HomeViewControllerInterface: AnyObject {
     func showLoadingView()
     func hideLoadingView()
     func sortButtonTapped()
+    func showAlert(title: String, message: String)
 }
 
 extension HomeViewController {
@@ -24,6 +25,7 @@ extension HomeViewController {
             static let estimatedHeight: CGFloat = 44
             static let groupCount: Int = 1
             static let textColor: UIColor = UIColor(named: "distilledTextColor") ?? .darkGray
+            static let navBarBackgroundColor: UIColor = .white
         }
     }
 }
@@ -52,7 +54,7 @@ extension HomeViewController: HomeViewControllerInterface {
     func prepareNavigationBar(with buttonName: String) {
         if let navigationController = navigationController {
             navigationController.setTintColor(Constants.UI.textColor)
-            navigationController.backgroundColor(.white)
+            navigationController.backgroundColor(Constants.UI.navBarBackgroundColor)
         }
 
         let sortButton = UIBarButtonItem(title: buttonName,
@@ -99,6 +101,10 @@ extension HomeViewController: HomeViewControllerInterface {
 
     @objc func sortButtonTapped() {
         presenter.sortTVShows()
+    }
+
+    func showAlert(title: String, message: String) {
+        showErrorAlert(title: title, message: message)
     }
 }
 

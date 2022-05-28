@@ -8,10 +8,12 @@
 import UIKit
 
 protocol SplashViewControllerInterface: AnyObject {
-
+    func animateLogoView()
 }
 
 final class SplashViewController: BaseViewController {
+    @IBOutlet private weak var logoImageView: UIImageView!
+
     var presenter: SplashPresenterInterface!
 
     override func viewDidLoad() {
@@ -20,5 +22,8 @@ final class SplashViewController: BaseViewController {
 }
 
 extension SplashViewController: SplashViewControllerInterface {
-
+    func animateLogoView() {
+        logoImageView.animate()
+    }
 }
+

@@ -9,12 +9,13 @@ import Foundation
 
 extension SplashPresenter {
     fileprivate enum Constants {
-        static let delayTime: DispatchTime = DispatchTime(uptimeNanoseconds: 3)
+        static let delayTime: Double = 1.5
     }
 }
 
 protocol SplashPresenterInterface: AnyObject {
     func viewDidLoad()
+    func navigateToHome()
 }
 
 final class SplashPresenter: SplashPresenterInterface {
@@ -33,7 +34,12 @@ final class SplashPresenter: SplashPresenterInterface {
     }
 
     func viewDidLoad() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        view.animateLogoView()
+        navigateToHome()
+    }
+
+    func navigateToHome() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.delayTime) {
             self.router.navigate(.home)
         }
     }

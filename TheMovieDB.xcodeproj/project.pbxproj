@@ -24,7 +24,6 @@
 		E47537D8284203ED00A8EA00 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537CB284203ED00A8EA00 /* UIWindow+Extension.swift */; };
 		E47537D9284203ED00A8EA00 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537CC284203ED00A8EA00 /* UINavigationController+Extensions.swift */; };
 		E47537DA284203ED00A8EA00 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537CD284203ED00A8EA00 /* Collection+Extensions.swift */; };
-		E47537DB284203ED00A8EA00 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537CF284203ED00A8EA00 /* Viewable.swift */; };
 		E47537DC284203ED00A8EA00 /* LoadingShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D0284203ED00A8EA00 /* LoadingShowable.swift */; };
 		E47537DD284203ED00A8EA00 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D2284203ED00A8EA00 /* BaseViewController.swift */; };
 		E47537DE284203ED00A8EA00 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47537D3284203ED00A8EA00 /* BaseLabel.swift */; };
@@ -44,6 +43,7 @@
 		E475381028423C6800A8EA00 /* TVShowListCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475380F28423C6800A8EA00 /* TVShowListCellPresenter.swift */; };
 		E475381228423F5D00A8EA00 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381128423F5D00A8EA00 /* UICollectionView+Extensions.swift */; };
 		E475381428425D4300A8EA00 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475381328425D4300A8EA00 /* String+Extensions.swift */; };
+		E4753816284290E900A8EA00 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4753815284290E900A8EA00 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,6 @@
 		E47537CB284203ED00A8EA00 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		E47537CC284203ED00A8EA00 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		E47537CD284203ED00A8EA00 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
-		E47537CF284203ED00A8EA00 /* Viewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		E47537D0284203ED00A8EA00 /* LoadingShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingShowable.swift; sourceTree = "<group>"; };
 		E47537D2284203ED00A8EA00 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E47537D3284203ED00A8EA00 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
@@ -104,6 +103,7 @@
 		E475380F28423C6800A8EA00 /* TVShowListCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListCellPresenter.swift; sourceTree = "<group>"; };
 		E475381128423F5D00A8EA00 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		E475381328425D4300A8EA00 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E4753815284290E900A8EA00 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +260,7 @@
 				E47537CC284203ED00A8EA00 /* UINavigationController+Extensions.swift */,
 				E47537CD284203ED00A8EA00 /* Collection+Extensions.swift */,
 				E475381328425D4300A8EA00 /* String+Extensions.swift */,
+				E4753815284290E900A8EA00 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,7 +268,6 @@
 		E47537CE284203ED00A8EA00 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E47537CF284203ED00A8EA00 /* Viewable.swift */,
 				E47537D0284203ED00A8EA00 /* LoadingShowable.swift */,
 			);
 			path = Protocols;
@@ -480,7 +480,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E475377B284201C900A8EA00 /* AppDelegate.swift in Sources */,
-				E47537DB284203ED00A8EA00 /* Viewable.swift in Sources */,
 				E47537D7284203ED00A8EA00 /* UIViewController+Extensions.swift in Sources */,
 				E47537F728420F6200A8EA00 /* HomePresenter.swift in Sources */,
 				E47537DD284203ED00A8EA00 /* BaseViewController.swift in Sources */,
@@ -493,6 +492,7 @@
 				E47538082842392900A8EA00 /* TVShowListCell.swift in Sources */,
 				E47537BE2842039000A8EA00 /* SplashPresenter.swift in Sources */,
 				E475381428425D4300A8EA00 /* String+Extensions.swift in Sources */,
+				E4753816284290E900A8EA00 /* UIView+Extensions.swift in Sources */,
 				E47537DE284203ED00A8EA00 /* BaseLabel.swift in Sources */,
 				E47537FF28421DE300A8EA00 /* TopRatedTVShows.swift in Sources */,
 				E47537DC284203ED00A8EA00 /* LoadingShowable.swift in Sources */,

@@ -13,4 +13,12 @@ class BaseViewController: UIViewController, LoadingShowable {
         super.viewDidLoad()
     }
 
+    func showErrorAlert(title: String, message: String, buttonName: String? = "OK") {
+        let alert = UIAlertController(title: title,
+                                                message: message,
+                                                preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonName,
+                                                style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
