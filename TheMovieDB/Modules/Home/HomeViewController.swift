@@ -40,6 +40,7 @@ final class HomeViewController: BaseViewController {
     }
 }
 
+// MARK: - HomeViewControllerInterface
 extension HomeViewController: HomeViewControllerInterface {
     func prepareCollectionView() {
         collectionView.backgroundColor = .white
@@ -108,6 +109,7 @@ extension HomeViewController: HomeViewControllerInterface {
     }
 }
 
+// MARK: - UICollectionView
 extension HomeViewController: UICollectionViewDelegate {}
 
 extension HomeViewController: UICollectionViewDataSource {

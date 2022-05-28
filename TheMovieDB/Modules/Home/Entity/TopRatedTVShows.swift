@@ -21,7 +21,7 @@ struct TopRatedTVShowsResponse: Codable {
 }
 
 // MARK: - TVShow
-struct TVShow: Codable {
+struct TVShow: Codable, Equatable {
     let backdropPath: String?
     let firstAirDate: String?
     let genreIDS: [Int]?

@@ -22,6 +22,7 @@ protocol HomePresenterInterface: AnyObject {
     func getTVShow(_ index: Int) -> TVShow?
     func scrollViewDidEndDecelerating()
     func sortTVShows()
+    func toggleSortingFlag()
 }
 
 final class HomePresenter: HomePresenterInterface {
@@ -78,8 +79,12 @@ final class HomePresenter: HomePresenterInterface {
         } else {
             shows.sort { $0.name ?? .empty > $1.name ?? .empty }
         }
-
+        
+        toggleSortingFlag()
         view.reloadData()
+    }
+
+    func toggleSortingFlag() {
         sortAlphabetically.toggle()
     }
 }
