@@ -31,7 +31,6 @@ final class HomePresenter: HomePresenterInterface {
 
     private var shouldFetchNextPage: Bool = true
     private var pageNumber: Int = Constants.initialPageValue
-    private var totalPages: Int = .zero
     private var sortAlphabetically: Bool = true
 
     unowned private var view: HomeViewControllerInterface!
@@ -94,8 +93,6 @@ extension HomePresenter: HomeInteractorOutputInterface {
         switch result {
         case .success(let response):
             if let shows = response.results {
-                totalPages = response.totalPages ?? .zero
-
                 if pageNumber == Constants.initialPageValue {
                     self.shows = shows
                 } else {
