@@ -9,5 +9,4 @@ import Foundation
 
 enum AppAccessibilityIdenfier: String {
     case sortButton
-    case tvShowListCell
 }

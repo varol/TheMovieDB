@@ -128,7 +128,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
         if let showItem = presenter.getTVShow(indexPath.row) {
             cell.presenter = TVShowListCellPresenter(view: cell, showItem: showItem)
-            cell.accessibilityIdentifier = (AppAccessibilityIdenfier.tvShowListCell.rawValue + String(indexPath.row))
         }
 
         return cell
