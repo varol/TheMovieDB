@@ -57,6 +57,10 @@
 		E47538512842B78000A8EA00 /* AppAccessibilityIdenfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475384F2842B78000A8EA00 /* AppAccessibilityIdenfier.swift */; };
 		E47538542842BD6900A8EA00 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47538532842BD6900A8EA00 /* BaseTests.swift */; };
 		E47538562842BE7E00A8EA00 /* HomeScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47538552842BE7E00A8EA00 /* HomeScreenTests.swift */; };
+		E4C7A4732843A38A00182083 /* MockSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A4722843A38A00182083 /* MockSplashViewController.swift */; };
+		E4C7A4752843A3C900182083 /* MockSplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A4742843A3C900182083 /* MockSplashInteractor.swift */; };
+		E4C7A4772843A3F200182083 /* MockSplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A4762843A3F200182083 /* MockSplashRouter.swift */; };
+		E4C7A4792843A41A00182083 /* SplashPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A4782843A41A00182083 /* SplashPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,10 @@
 		E475384F2842B78000A8EA00 /* AppAccessibilityIdenfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAccessibilityIdenfier.swift; sourceTree = "<group>"; };
 		E47538532842BD6900A8EA00 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 		E47538552842BE7E00A8EA00 /* HomeScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTests.swift; sourceTree = "<group>"; };
+		E4C7A4722843A38A00182083 /* MockSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSplashViewController.swift; sourceTree = "<group>"; };
+		E4C7A4742843A3C900182083 /* MockSplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSplashInteractor.swift; sourceTree = "<group>"; };
+		E4C7A4762843A3F200182083 /* MockSplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSplashRouter.swift; sourceTree = "<group>"; };
+		E4C7A4782843A41A00182083 /* SplashPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +400,7 @@
 		E47538232842A19800A8EA00 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E4C7A4712843A37400182083 /* Splash */,
 				E4753817284292C200A8EA00 /* Home */,
 			);
 			path = Screens;
@@ -438,6 +447,17 @@
 				E47538552842BE7E00A8EA00 /* HomeScreenTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		E4C7A4712843A37400182083 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7A4782843A41A00182083 /* SplashPresenterTests.swift */,
+				E4C7A4722843A38A00182083 /* MockSplashViewController.swift */,
+				E4C7A4742843A3C900182083 /* MockSplashInteractor.swift */,
+				E4C7A4762843A3F200182083 /* MockSplashRouter.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,9 +638,13 @@
 			files = (
 				E4753792284201CB00A8EA00 /* TheMovieDBTests.swift in Sources */,
 				E4753819284292E200A8EA00 /* MockHomeViewController.swift in Sources */,
+				E4C7A4752843A3C900182083 /* MockSplashInteractor.swift in Sources */,
+				E4C7A4792843A41A00182083 /* SplashPresenterTests.swift in Sources */,
 				E47538272842A1D200A8EA00 /* MockTVShowListCell.swift in Sources */,
 				E475381B284292F200A8EA00 /* MockHomeInteractor.swift in Sources */,
+				E4C7A4772843A3F200182083 /* MockSplashRouter.swift in Sources */,
 				E475381F2842931C00A8EA00 /* HomePresenterTests.swift in Sources */,
+				E4C7A4732843A38A00182083 /* MockSplashViewController.swift in Sources */,
 				E475381D284292FA00A8EA00 /* MockHomeRouter.swift in Sources */,
 				E47538292842A2B100A8EA00 /* TVShowListCellPresenterTests.swift in Sources */,
 			);
