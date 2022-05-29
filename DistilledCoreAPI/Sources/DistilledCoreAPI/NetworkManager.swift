@@ -12,7 +12,13 @@ public typealias Completion<T> = (Result<T, APIClientError>) -> Void where T: De
 
 public final class NetworkManager<EndpointItem: Endpoint> {
     public init() { }
-    
+
+    let reachabilityManager = NetworkReachabilityManager()?.isReachable
+
+    public func isConnectedToInternet() -> Bool {
+        return reachabilityManager ?? false
+    }
+
     private var possibleEmptyResponseCodes: Set<Int> {
         var defaultSet = DataResponseSerializer.defaultEmptyResponseCodes
         defaultSet.insert(200)
@@ -57,4 +63,6 @@ public final class NetworkManager<EndpointItem: Endpoint> {
                 }
             })
     }
+
+    
 }
