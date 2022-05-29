@@ -35,7 +35,5 @@ final class HomeRouter: NSObject {
 }
 
 extension HomeRouter: HomeRouterInterface {
-    func navigate(_ route: HomeRoutes) {
-
-    }
+    func navigate(_ route: HomeRoutes) {}
 }

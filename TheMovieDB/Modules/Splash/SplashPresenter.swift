@@ -9,16 +9,20 @@ import Foundation
 
 extension SplashPresenter {
     fileprivate enum Constants {
-        static let delayTime: Double = 1.5
+        static let noInternetConnection: String = "No internet connection"
     }
 }
 
 protocol SplashPresenterInterface: AnyObject {
     func viewDidLoad()
-    func navigateToHome()
+    func animationCompleted()
+    func setInternetConnectionStatus(with value: Bool)
+
+    var isInternetOnline: Bool { get set }
 }
 
-final class SplashPresenter: SplashPresenterInterface {
+final class SplashPresenter {
+    var isInternetOnline = false
 
     unowned private var view: SplashViewControllerInterface!
     private let router: SplashRouterInterface!
@@ -32,19 +36,29 @@ final class SplashPresenter: SplashPresenterInterface {
         self.interactor = interactor
         self.router = router
     }
+}
 
+extension SplashPresenter: SplashPresenterInterface {
     func viewDidLoad() {
+        interactor.checkInternetConnection()
         view.animateLogoView()
-        navigateToHome()
     }
 
-    func navigateToHome() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.delayTime) {
-            self.router.navigate(.home)
+    func animationCompleted() {
+        if isInternetOnline {
+            router.navigate(.home)
+        } else {
+            view.showAlert(title: .empty, message: Constants.noInternetConnection)
         }
+    }
+
+    func setInternetConnectionStatus(with value: Bool) {
+        isInternetOnline = value
     }
 }
 
 extension SplashPresenter: SplashInteractorOutputInterface {
-
+    func internetConnection(status: Bool) {
+        setInternetConnectionStatus(with: status)
+    }
 }

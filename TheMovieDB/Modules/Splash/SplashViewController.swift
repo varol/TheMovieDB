@@ -9,6 +9,7 @@ import UIKit
 
 protocol SplashViewControllerInterface: AnyObject {
     func animateLogoView()
+    func showAlert(title: String, message: String)
 }
 
 final class SplashViewController: BaseViewController {
@@ -23,7 +24,14 @@ final class SplashViewController: BaseViewController {
 
 extension SplashViewController: SplashViewControllerInterface {
     func animateLogoView() {
-        logoImageView.animate()
+        logoImageView.animate(completion: { [weak self] in
+            guard let self = self else { return }
+            self.presenter.animationCompleted()
+        })
+    }
+
+    func showAlert(title: String, message: String) {
+        showErrorAlert(title: title, message: message)
     }
 }
 

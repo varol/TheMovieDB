@@ -6,13 +6,28 @@
 //
 
 import Foundation
+import DistilledCoreAPI
 
-protocol SplashInteractorInterface: AnyObject {}
+protocol SplashInteractorInterface: AnyObject {
+    func checkInternetConnection()
+}
 
-protocol SplashInteractorOutputInterface: AnyObject {}
+protocol SplashInteractorOutputInterface: AnyObject {
+    func internetConnection(status: Bool)
+}
 
 final class SplashInteractor {
     var output: SplashInteractorOutputInterface?
+
+    private let networkManager: NetworkManager<MovieDBEndpoint>
+
+    init(networkManager: NetworkManager<MovieDBEndpoint> = NetworkManager()) {
+        self.networkManager = networkManager
+    }
 }
 
-extension SplashInteractor: SplashInteractorInterface {}
+extension SplashInteractor: SplashInteractorInterface {
+    func checkInternetConnection() {
+        output?.internetConnection(status: networkManager.isConnectedToInternet())
+    }
+}

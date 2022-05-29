@@ -18,14 +18,16 @@ protocol HomeInteractorOutputInterface: AnyObject {
 
 typealias TopRatedTVShowsResult = Result<TopRatedTVShowsResponse, APIClientError>
 
-final class HomeInteractor: HomeInteractorInterface {
+final class HomeInteractor {
     var output: HomeInteractorOutputInterface?
     private let networkManager: NetworkManager<MovieDBEndpoint>
 
     init(networkManager: NetworkManager<MovieDBEndpoint> = NetworkManager()) {
         self.networkManager = networkManager
     }
+}
 
+extension HomeInteractor: HomeInteractorInterface {
     func fetchTVShows(page: Int) {
         networkManager.request(endpoint: .topRatedTVShows(page),
                                type: TopRatedTVShowsResponse.self) { [weak self] result in
@@ -34,4 +36,3 @@ final class HomeInteractor: HomeInteractorInterface {
         }
     }
 }
-

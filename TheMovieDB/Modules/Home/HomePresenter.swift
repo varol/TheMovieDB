@@ -25,13 +25,12 @@ protocol HomePresenterInterface: AnyObject {
     func toggleSortingFlag()
 }
 
-final class HomePresenter: HomePresenterInterface {
+final class HomePresenter {
 
     private var shows: [TVShow] = []
-
     private var shouldFetchNextPage: Bool = true
     private var pageNumber: Int = Constants.initialPageValue
-    private var sortAlphabetically: Bool = true
+    private var isSortingAscending: Bool = true
 
     unowned private var view: HomeViewControllerInterface!
     private let router: HomeRouterInterface!
@@ -45,7 +44,9 @@ final class HomePresenter: HomePresenterInterface {
         self.interactor = interactor
         self.router = router
     }
+}
 
+extension HomePresenter: HomePresenterInterface {
     var numberOfItems: Int {
         shows.count
     }
@@ -67,24 +68,23 @@ final class HomePresenter: HomePresenterInterface {
     }
 
     func scrollViewDidEndDecelerating() {
-        if shouldFetchNextPage {
-            fetchTVShows()
-        }
+        guard shouldFetchNextPage else { return }
+        fetchTVShows()
     }
 
     func sortTVShows() {
-        if sortAlphabetically {
+        if isSortingAscending {
             shows.sort { $0.name ?? .empty < $1.name ?? .empty }
         } else {
             shows.sort { $0.name ?? .empty > $1.name ?? .empty }
         }
-        
+
         toggleSortingFlag()
         view.reloadData()
     }
 
     func toggleSortingFlag() {
-        sortAlphabetically.toggle()
+        isSortingAscending.toggle()
     }
 }
 
@@ -93,12 +93,7 @@ extension HomePresenter: HomeInteractorOutputInterface {
         switch result {
         case .success(let response):
             if let shows = response.results {
-                if pageNumber == Constants.initialPageValue {
-                    self.shows = shows
-                } else {
-                    self.shows.append(contentsOf: shows)
-                }
-
+                self.shows.append(contentsOf: shows)
                 pageNumber += 1
             } else {
                 shouldFetchNextPage = false
